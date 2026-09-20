@@ -61,14 +61,7 @@ export default function ProductCard({ p, view = "grid" }: { p: Product; view?: "
       </div>
       <div className="mt-1.5 flex items-center justify-between gap-2">
         <Price price={p.price} compareAt={p.compareAt} />
-        {p.inStock ? (
-          <button
-            onClick={() => addToCart(p.slug)}
-            className="rounded-md border border-brand-600 px-3.5 py-1.5 text-xs font-bold text-brand-700 transition hover:bg-brand-600 hover:text-white"
-          >
-            + Add
-          </button>
-        ) : (
+        {!p.inStock && (
           <span className="rounded-md border border-slate-200 bg-slate-50 px-3.5 py-1.5 text-xs font-bold text-slate-400">Notify me</span>
         )}
       </div>
