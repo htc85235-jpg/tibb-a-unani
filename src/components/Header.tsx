@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { site } from "@/lib/site";
 import { useStore } from "@/lib/store";
 import { products } from "@/lib/products";
 import { rsShort } from "@/lib/format";
@@ -75,14 +74,17 @@ export default function Header() {
           </nav>
         </div>
 
-        {/* logo — centred */}
-        <Link href="/" className="flex flex-col items-center text-center leading-none">
-          <span className="font-display text-xl font-bold tracking-tight text-brand-700 sm:text-2xl">
-            TIBB<span className="text-brand-500">-A-</span>UNANI
-          </span>
-          <span className="mt-0.5 hidden text-[10px] font-semibold tracking-[0.22em] text-brand-600 sm:block">
-            {site.sub.toUpperCase()}
-          </span>
+        {/* logo — centred (script signature wordmark) */}
+        <Link
+          href="/"
+          aria-label="Tibb-a-Unani — Herbal & Unani Remedies"
+          className="flex items-center justify-center leading-none"
+        >
+          <img
+            src="/images/logo-header.png"
+            alt="Tibb-a-Unani — Herbal & Unani Remedies"
+            className="h-9 w-auto sm:h-12 lg:h-14"
+          />
         </Link>
 
         {/* right: search + icons */}
