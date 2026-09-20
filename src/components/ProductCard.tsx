@@ -59,11 +59,8 @@ export default function ProductCard({ p, view = "grid" }: { p: Product; view?: "
         <Stars rating={p.rating} size={12} />
         <span className="text-xs text-slate-400">({p.reviews})</span>
       </div>
-      <div className="mt-1.5 flex items-center justify-between gap-2">
+      <div className="mt-1.5">
         <Price price={p.price} compareAt={p.compareAt} />
-        {!p.inStock && (
-          <span className="rounded-md border border-slate-200 bg-slate-50 px-3.5 py-1.5 text-xs font-bold text-slate-400">Notify me</span>
-        )}
       </div>
     </div>
   );
