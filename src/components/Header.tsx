@@ -83,7 +83,7 @@ export default function Header() {
           <img
             src="/images/logo-header.png"
             alt="Tibb-a-Unani — Herbal & Unani Remedies"
-            className="h-9 w-auto sm:h-12 lg:h-14"
+            className="h-8 w-auto sm:h-10 lg:h-12 xl:h-14"
           />
         </Link>
 
