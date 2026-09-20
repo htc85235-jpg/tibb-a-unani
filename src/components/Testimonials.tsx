@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 import Stars from "./Stars";
 
 const REVIEWS = [
-  { name: "Ayesha K., Lahore", text: "The Khamira Gilo quality is exactly like the old dawakhanas used to make. Packaging was neat and delivery took only two days.", rating: 5 },
-  { name: "Muhammad Iqbal, Islamabad", text: "Ordered the majoon for my father. He says the taste and effect both remind him of his childhood remedies. Will order again.", rating: 5 },
-  { name: "Sana R., Karachi", text: "Hakeem sahib guided me on WhatsApp about dosage before I even ordered. Products are fresh and genuinely herbal.", rating: 5 },
-  { name: "Bilal A., Faisalabad", text: "Cash on delivery made it easy to trust the first order. Now I am on my third bottle of Sharbat Faulad.", rating: 4 },
-  { name: "Dr. Farah T., Rawalpindi", text: "As a doctor I check compositions carefully — clean, classical formulations with nothing unnecessary added. Recommended to my patients as a herbal option.", rating: 5 },
+  { name: "Ayesha K., Lahore", text: "Khamira Gilo ki quality bilkul purane dawakhanay jaisi hai. Packaging bhi neat thi aur delivery sirf do din mein pohanch gayi. Bohat shukriya!", rating: 5 },
+  { name: "Muhammad Iqbal, Islamabad", text: "Walid sahab ke liye majoon mangwaya tha. Unhone bataya ke zaiqa aur asar dono purane zamane ki dawa jaise hain. InshaAllah dobara order karunga.", rating: 5 },
+  { name: "Sana R., Karachi", text: "Order se pehle Hakeem sahib ne WhatsApp par dosage ki poori guidance di. Products fresh hain aur asli jari bootiyon se bante hain. Recommended!", rating: 5 },
+  { name: "Bilal A., Faisalabad", text: "Cash on delivery ne pehli order par bharosa asaan bana diya. Ab Sharbat Faulad ki teesri bottle use kar raha hoon, result acha hai.", rating: 4 },
+  { name: "Dr. Farah T., Rawalpindi", text: "Main composition khud check karti hoon — formulations classical aur clean hain, koi faltu cheez shamil nahi. Patients ko herbal option ke tor par bataya hai.", rating: 5 },
 ];
 
 export default function Testimonials() {

@@ -56,14 +56,27 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-slate-100 bg-white/95 backdrop-blur">
-      <div className="container-x flex h-16 items-center gap-3 lg:h-20">
-        {/* mobile hamburger */}
-        <button className="lg:hidden" aria-label="Open menu" onClick={() => setMenu((v) => !v)}>
-          <Icon d={menu ? "M6 6l12 12M18 6L6 18" : "M4 7h16M4 12h16M4 17h16"} />
-        </button>
+      <div className="container-x grid h-16 grid-cols-[1fr_auto_1fr] items-center gap-3 lg:h-20">
+        {/* left: mobile hamburger + desktop nav */}
+        <div className="flex items-center gap-2">
+          <button className="-ml-1 lg:hidden" aria-label="Open menu" onClick={() => setMenu((v) => !v)}>
+            <Icon d={menu ? "M6 6l12 12M18 6L6 18" : "M4 7h16M4 12h16M4 17h16"} />
+          </button>
+          <nav className="hidden items-center gap-7 lg:flex" aria-label="Main">
+            {NAV.map((n) => (
+              <Link
+                key={n.href}
+                href={n.href}
+                className={`text-sm font-semibold transition hover:text-brand-600 ${pathname === n.href.replace(/\/$/, "") ? "text-brand-600" : "text-slate-700"}`}
+              >
+                {n.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
 
-        {/* logo */}
-        <Link href="/" className="flex flex-col leading-none">
+        {/* logo — centred */}
+        <Link href="/" className="flex flex-col items-center text-center leading-none">
           <span className="font-display text-xl font-bold tracking-tight text-brand-700 sm:text-2xl">
             TIBB<span className="text-brand-500">-A-</span>UNANI
           </span>
@@ -72,21 +85,9 @@ export default function Header() {
           </span>
         </Link>
 
-        {/* desktop nav */}
-        <nav className="ml-10 hidden items-center gap-7 lg:flex" aria-label="Main">
-          {NAV.map((n) => (
-            <Link
-              key={n.href}
-              href={n.href}
-              className={`text-sm font-semibold transition hover:text-brand-600 ${pathname === n.href.replace(/\/$/, "") ? "text-brand-600" : "text-slate-700"}`}
-            >
-              {n.label}
-            </Link>
-          ))}
-        </nav>
-
-        {/* search */}
-        <div ref={box} className="relative ml-auto hidden w-56 md:block lg:w-64">
+        {/* right: search + icons */}
+        <div className="flex items-center justify-end gap-3 md:gap-4">
+          <div ref={box} className="relative hidden w-56 md:block lg:w-64">
           <form onSubmit={submit}>
             <svg className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="2" /><path d="M20 20l-3.5-3.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
             <input
@@ -120,7 +121,7 @@ export default function Header() {
         </div>
 
         {/* icons */}
-        <div className="ml-auto flex items-center gap-4 md:ml-3">
+        <div className="flex items-center gap-4">
           <Link href="/account/login/" aria-label="Account" className="text-slate-700 transition hover:text-brand-600">
             <Icon d={dUser} />
           </Link>
@@ -141,6 +142,7 @@ export default function Header() {
             )}
           </Link>
         </div>
+      </div>
       </div>
 
       {/* mobile menu + search */}
