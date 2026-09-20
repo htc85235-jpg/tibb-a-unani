@@ -32,6 +32,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [menu, setMenu] = useState(false);
   const box = useRef<HTMLDivElement>(null);
+  const mobileSearch = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     /* eslint-disable-next-line react-hooks/set-state-in-effect -- close menus after navigation */
@@ -53,6 +54,12 @@ export default function Header() {
     if (q.trim()) { setOpen(false); router.push(`/search/?q=${encodeURIComponent(q.trim())}`); }
   };
 
+  /* mobile search icon: open the menu panel and focus its "I'm looking for" box */
+  const openMobileSearch = () => {
+    setMenu(true);
+    setTimeout(() => mobileSearch.current?.focus(), 80);
+  };
+
   return (
     <header className="sticky top-0 z-40 border-b border-slate-100 bg-white/95 backdrop-blur">
       <div className="container-x grid h-16 grid-cols-[1fr_auto_1fr] items-center gap-3 lg:h-20">
@@ -60,6 +67,16 @@ export default function Header() {
         <div className="flex items-center gap-2">
           <button className="-ml-1 lg:hidden" aria-label="Open menu" onClick={() => setMenu((v) => !v)}>
             <Icon d={menu ? "M6 6l12 12M18 6L6 18" : "M4 7h16M4 12h16M4 17h16"} />
+          </button>
+          <button
+            className="text-slate-700 transition hover:text-brand-600 md:hidden"
+            aria-label="Search products"
+            onClick={openMobileSearch}
+          >
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="1.8" />
+              <path d="M20 20l-3.5-3.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+            </svg>
           </button>
           <nav className="hidden items-center gap-7 lg:flex" aria-label="Main">
             {NAV.map((n) => (
@@ -83,7 +100,7 @@ export default function Header() {
           <img
             src="/images/logo-header.png"
             alt="Tibb-a-Unani — Herbal & Unani Remedies"
-            className="h-8 w-auto sm:h-10 lg:h-12 xl:h-14"
+            className="h-7 w-auto sm:h-10 lg:h-12 xl:h-14"
           />
         </Link>
 
@@ -152,6 +169,7 @@ export default function Header() {
         <div className="border-t border-slate-100 bg-white px-4 py-4 lg:hidden">
           <form onSubmit={submit} className="mb-3 md:hidden">
             <input
+              ref={mobileSearch}
               value={q}
               onChange={(e) => setQ(e.target.value)}
               placeholder="I'm looking for…"
