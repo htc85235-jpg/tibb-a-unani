@@ -6,7 +6,6 @@ import { bySlug, prevNext, related, alsoBought } from "@/lib/products";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Price from "@/components/Price";
 import Stars from "@/components/Stars";
-import QtyStepper from "@/components/QtyStepper";
 import CodModal from "@/components/CodModal";
 import Accordion from "@/components/Accordion";
 import ProductCard from "@/components/ProductCard";
@@ -20,15 +19,10 @@ export default function ProductView({ slug }: { slug: string }) {
   const router = useRouter();
   const { addToCart } = useStore();
   const p = bySlug(slug);
-  const [qty, setQty] = useState(1);
   const [cod, setCod] = useState(false);
   const [viewing, setViewing] = useState(p?.viewing ?? 0);
   const [zoom, setZoom] = useState(false);
 
-  useEffect(() => {
-    /* eslint-disable-next-line react-hooks/set-state-in-effect -- reset qty when switching product */
-    setQty(1);
-  }, [slug]);
   useEffect(() => {
     if (!p) return;
     /* eslint-disable-next-line react-hooks/set-state-in-effect -- seed live viewer count for this product */
@@ -123,17 +117,14 @@ export default function ProductView({ slug }: { slug: string }) {
             <p dir="rtl" lang="ur" className="mt-2 text-lg font-semibold text-brand-700">{p.urdu}</p>
 
             {p.inStock && (
-              <div className="mt-6 flex flex-wrap items-center gap-3">
-                <QtyStepper qty={qty} onChange={setQty} />
-                <button onClick={() => setCod(true)} className="btn-primary flex-1 rounded-xl bg-brand-600 py-3.5 text-base shadow-sm shadow-brand-900/20 sm:min-w-64">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 8h12l1 12H5L6 8zm3 0V6a3 3 0 016 0v2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
-                  Buy with Cash on Delivery
-                </button>
-              </div>
+              <button onClick={() => setCod(true)} className="btn-primary mt-6 w-full rounded-xl bg-brand-600 py-3.5 text-base shadow-sm shadow-brand-900/20">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 8h12l1 12H5L6 8zm3 0V6a3 3 0 016 0v2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
+                Buy with Cash on Delivery
+              </button>
             )}
             {p.inStock && (
               <button
-                onClick={() => { addToCart(p.slug, qty); router.push("/cart/"); }}
+                onClick={() => { addToCart(p.slug, 1); router.push("/cart/"); }}
                 className="btn-outline mt-3 w-full rounded-xl"
               >
                 Add to Cart
