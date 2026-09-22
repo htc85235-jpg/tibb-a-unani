@@ -65,9 +65,6 @@ export default function ProductView({ slug }: { slug: string }) {
               <button aria-label="Zoom image" onClick={() => setZoom(true)} className="overflow-hidden rounded-lg border-2 border-brand-500">
                 <img src={p.img} alt={p.name} className="h-16 w-16 object-cover" />
               </button>
-              <div className="overflow-hidden rounded-lg border border-slate-200 opacity-70">
-                <img src="/images/hero2.png" alt={`${p.name} in context`} className="h-16 w-16 object-cover" />
-              </div>
             </div>
             <div className="relative flex-1 overflow-hidden rounded-xl bg-brand-50/40">
               <img src={p.img} alt={p.name} className="aspect-square w-full cursor-zoom-in object-cover" onClick={() => setZoom(true)} />
