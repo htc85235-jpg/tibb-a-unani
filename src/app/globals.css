@@ -45,3 +45,10 @@ body { @apply bg-white text-slate-800 font-body antialiased; }
 
 @keyframes pop-in { from { opacity: 0; transform: scale(.96);} to { opacity: 1; transform: none; } }
 .pop-in { animation: pop-in .25s ease both; }
+
+/* tawk.to: hide the "We Are Here!" greeting sticker — owner doesn't want it.
+   The sticker lives in tawk's own wrapper div#chat-bubble (probed live: iframe
+   124x95, bottom 30px, right 0, z 1000004). The chat bubble is #min-widget and
+   the chat window is #message-preview, so hiding #chat-bubble touches nothing
+   else — chat keeps working. */
+#chat-bubble { display: none !important; }
