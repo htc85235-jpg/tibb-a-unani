@@ -3,11 +3,11 @@ export const site = {
   name: "Tibb-a-Unani",
   tagline: "Ancient Hikmat, Pure Healing",
   sub: "Herbal & Unani Remedies",
-  /* Owner's real number (international format for wa.me) */
-  phone: "0316 5175190",
-  whatsapp: "923165175190",
+  /* Client's real number (international format for wa.me) */
+  phone: "+92 322 6644422",
+  whatsapp: "923226644422",
   email: "info@tibb-a-unani.com",
-  address: "Shop #12, Herbal Market, Saddar, Rawalpindi, Pakistan",
+  address: "Islamabad, Pakistan",
   hours: "Mon – Sat · 10:00 am – 8:00 pm",
   domain: "tibb-a-unani.com",
   announcements: [

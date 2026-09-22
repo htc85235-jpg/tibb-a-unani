@@ -38,7 +38,7 @@ export default function CodModal({ product, open, onClose }: { product: Product;
   const complete = () => {
     const e: Record<string, string> = {};
     if (!f.name.trim()) e.name = "Full name is required";
-    if (!/^0?[0-9]{10}$/.test(f.phone.replace(/[\s-]/g, ""))) e.phone = "Enter a valid phone number (e.g. 0300 1234567)";
+    if (!/^0?[0-9]{10}$/.test(f.phone.replace(/[\s-]/g, ""))) e.phone = "Enter a valid phone number (e.g. 0322 6644422)";
     if (!f.address.trim()) e.address = "Complete address is required";
     if (!f.city.trim()) e.city = "City is required";
     setErrs(e);
@@ -107,7 +107,7 @@ export default function CodModal({ product, open, onClose }: { product: Product;
           <div className="mt-3 space-y-3">
             {([
               ["name", "Full Name", "text", "Amjad Khan"],
-              ["phone", "Phone Number", "tel", "0300 1234567"],
+              ["phone", "Phone Number", "tel", "0322 6644422"],
             ] as const).map(([k, label, type, ph]) => (
               <div key={k}>
                 <label className="field-label" htmlFor={`cod-${k}`}>{label} <span className="text-sale">*</span></label>

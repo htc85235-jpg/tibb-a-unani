@@ -29,7 +29,7 @@ export default function CheckoutPage() {
   const complete = () => {
     const e: Record<string, string> = {};
     if (!f.name.trim()) e.name = "Full name is required";
-    if (!/^0?[0-9]{10}$/.test(f.phone.replace(/[\s-]/g, ""))) e.phone = "Enter a valid phone number (e.g. 0300 1234567)";
+    if (!/^0?[0-9]{10}$/.test(f.phone.replace(/[\s-]/g, ""))) e.phone = "Enter a valid phone number (e.g. 0322 6644422)";
     if (!f.address.trim()) e.address = "Complete address is required";
     if (!f.city.trim()) e.city = "City is required";
     setErrs(e);
@@ -63,7 +63,7 @@ export default function CheckoutPage() {
             </div>
             <div>
               <label className="field-label" htmlFor="co-phone">Phone Number <span className="text-sale">*</span></label>
-              <input id="co-phone" type="tel" className={`field ${errs.phone ? "border-sale" : ""}`} value={f.phone} onChange={set("phone")} placeholder="0300 1234567" />
+              <input id="co-phone" type="tel" className={`field ${errs.phone ? "border-sale" : ""}`} value={f.phone} onChange={set("phone")} placeholder="0322 6644422" />
               {errs.phone && <p className="mt-1 text-xs text-sale">{errs.phone}</p>}
             </div>
             <div>

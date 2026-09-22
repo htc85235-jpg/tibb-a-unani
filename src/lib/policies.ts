@@ -48,9 +48,9 @@ export const policies: Policy[] = [
     title: "Contact Information",
     body: [
       "We love hearing from you. For order questions, product guidance or Hakeem advice, reach us through any of the channels below and we will respond during working hours.",
-      "Phone / WhatsApp: 0300 1234567 (10:00 am – 8:00 pm, Mon–Sat)",
+      "Phone / WhatsApp: +92 322 6644422 (10:00 am – 8:00 pm, Mon–Sat)",
       "Email: info@tibb-a-unani.com",
-      "Address: Shop #12, Herbal Market, Saddar, Rawalpindi, Pakistan",
+      "Address: Islamabad, Pakistan",
       "The fastest response is usually on WhatsApp — send us your question and our team replies with product suggestions, dosage guidance and order tracking updates.",
     ],
   },
