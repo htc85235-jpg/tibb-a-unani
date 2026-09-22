@@ -20,9 +20,6 @@ function Icon({ d, className = "" }: { d: string; className?: string }) {
     </svg>
   );
 }
-const dUser = "M12 12a4 4 0 100-8 4 4 0 000 8zM4 20c0-3.3 3.6-5 8-5s8 1.7 8 5";
-const dHeart = "M12 20.5s-7.5-4.6-9.3-9A5.2 5.2 0 0112 6.6a5.2 5.2 0 019.3 4.9c-1.8 4.4-9.3 9-9.3 9z";
-
 export default function Header() {
   const { wishlist } = useStore();
   const router = useRouter();
@@ -61,10 +58,10 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-slate-100 bg-white/95 backdrop-blur">
-      {/* mobile: [hamburger] [logo+search centred] [icons] · desktop (lg+): [logo+search left] [nav] [icons right] */}
-      <div className="container-x grid h-16 grid-cols-[1fr_auto_1fr] items-center gap-3 lg:h-20 lg:grid-cols-[auto_1fr_auto]">
-        {/* left: mobile hamburger + desktop nav (desktop: nav sits in the middle column) */}
-        <div className="flex items-center gap-2 lg:order-2">
+      {/* all viewports: [hamburger / nav] [logo centred] [search far right] */}
+      <div className="container-x grid h-16 grid-cols-[1fr_auto_1fr] items-center gap-3 lg:h-20">
+        {/* left: mobile hamburger + desktop nav */}
+        <div className="flex items-center gap-2">
           <button className="-ml-1 lg:hidden" aria-label="Open menu" onClick={() => setMenu((v) => !v)}>
             <Icon d={menu ? "M6 6l12 12M18 6L6 18" : "M4 7h16M4 12h16M4 17h16"} />
           </button>
@@ -81,19 +78,21 @@ export default function Header() {
           </nav>
         </div>
 
-        {/* logo + search — search sits immediately to the right of the logo; on desktop this block is the left-most column */}
-        <div className="flex items-center gap-3 lg:order-1">
-          <Link
-            href="/"
-            aria-label="Tibb-a-Unani — Herbal & Unani Remedies"
-            className="flex items-center leading-none"
-          >
-            <img
-              src="/images/logo-header.png"
-              alt="Tibb-a-Unani — Herbal & Unani Remedies"
-              className="h-7 w-auto sm:h-10 lg:h-12 xl:h-14"
-            />
-          </Link>
+        {/* centre: logo only — perfectly centred on every viewport */}
+        <Link
+          href="/"
+          aria-label="Tibb-a-Unani — Herbal & Unani Remedies"
+          className="flex items-center justify-center leading-none"
+        >
+          <img
+            src="/images/logo-header.png"
+            alt="Tibb-a-Unani — Herbal & Unani Remedies"
+            className="h-7 w-auto sm:h-10 lg:h-12 xl:h-14"
+          />
+        </Link>
+
+        {/* right: search pinned to the extreme right on every viewport */}
+        <div className="flex items-center justify-end">
           <div ref={box} className="relative hidden w-52 md:block lg:w-60">
           <form onSubmit={submit}>
             <svg className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="2" /><path d="M20 20l-3.5-3.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
@@ -137,21 +136,6 @@ export default function Header() {
             </svg>
           </button>
         </div>
-
-        {/* right: icons */}
-        <div className="flex items-center justify-end gap-4 lg:order-3">
-          <Link href="/account/login/" aria-label="Account" className="text-slate-700 transition hover:text-brand-600">
-            <Icon d={dUser} />
-          </Link>
-          <Link href="/pages/wishlist/" aria-label="Wishlist" className="relative hidden text-slate-700 transition hover:text-brand-600 sm:block">
-            <Icon d={dHeart} />
-            {wishlist.length > 0 && (
-              <span className="absolute -right-2 -top-1.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-sale px-1 text-[10px] font-bold text-white">
-                {wishlist.length}
-              </span>
-            )}
-          </Link>
-        </div>
       </div>
 
       {/* mobile menu + search */}
@@ -175,6 +159,9 @@ export default function Header() {
             ))}
             <Link href="/pages/wishlist/" className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-brand-50">
               Wishlist {wishlist.length > 0 && `(${wishlist.length})`}
+            </Link>
+            <Link href="/account/login/" className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-brand-50">
+              Account
             </Link>
           </nav>
         </div>
