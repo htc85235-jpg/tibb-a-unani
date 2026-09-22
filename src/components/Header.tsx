@@ -13,6 +13,13 @@ const NAV = [
   { href: "/pages/contact/", label: "Contact" },
 ];
 
+/* hamburger menu: Best Sellers + Account intentionally excluded (client request); desktop nav keeps Best Sellers */
+const MOBILE_NAV = [
+  { href: "/", label: "Home" },
+  { href: "/collections/all/", label: "Catalog" },
+  { href: "/pages/contact/", label: "Contact" },
+];
+
 function Icon({ d, className = "" }: { d: string; className?: string }) {
   return (
     <svg width="21" height="21" viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
@@ -152,16 +159,13 @@ export default function Header() {
             />
           </form>
           <nav className="grid gap-1" aria-label="Mobile">
-            {NAV.map((n) => (
+            {MOBILE_NAV.map((n) => (
               <Link key={n.href} href={n.href} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-brand-50">
                 {n.label}
               </Link>
             ))}
             <Link href="/pages/wishlist/" className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-brand-50">
               Wishlist {wishlist.length > 0 && `(${wishlist.length})`}
-            </Link>
-            <Link href="/account/login/" className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-brand-50">
-              Account
             </Link>
           </nav>
         </div>
