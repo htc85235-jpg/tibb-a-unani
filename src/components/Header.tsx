@@ -61,9 +61,10 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-slate-100 bg-white/95 backdrop-blur">
-      <div className="container-x grid h-16 grid-cols-[1fr_auto_1fr] items-center gap-3 lg:h-20">
-        {/* left: mobile hamburger + desktop nav */}
-        <div className="flex items-center gap-2">
+      {/* mobile: [hamburger] [logo+search centred] [icons] · desktop (lg+): [logo+search left] [nav] [icons right] */}
+      <div className="container-x grid h-16 grid-cols-[1fr_auto_1fr] items-center gap-3 lg:h-20 lg:grid-cols-[auto_1fr_auto]">
+        {/* left: mobile hamburger + desktop nav (desktop: nav sits in the middle column) */}
+        <div className="flex items-center gap-2 lg:order-2">
           <button className="-ml-1 lg:hidden" aria-label="Open menu" onClick={() => setMenu((v) => !v)}>
             <Icon d={menu ? "M6 6l12 12M18 6L6 18" : "M4 7h16M4 12h16M4 17h16"} />
           </button>
@@ -80,8 +81,8 @@ export default function Header() {
           </nav>
         </div>
 
-        {/* logo + search — search sits immediately to the right of the logo */}
-        <div className="flex items-center gap-3">
+        {/* logo + search — search sits immediately to the right of the logo; on desktop this block is the left-most column */}
+        <div className="flex items-center gap-3 lg:order-1">
           <Link
             href="/"
             aria-label="Tibb-a-Unani — Herbal & Unani Remedies"
@@ -138,7 +139,7 @@ export default function Header() {
         </div>
 
         {/* right: icons */}
-        <div className="flex items-center justify-end gap-4">
+        <div className="flex items-center justify-end gap-4 lg:order-3">
           <Link href="/account/login/" aria-label="Account" className="text-slate-700 transition hover:text-brand-600">
             <Icon d={dUser} />
           </Link>
