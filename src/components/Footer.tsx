@@ -5,9 +5,9 @@ import { site } from "@/lib/site";
 export default function Footer() {
   return (
     <footer className="mt-auto border-t border-slate-100 bg-brand-950 text-brand-100">
-      <div className="container-x grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="container-x grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-4">
         {/* About */}
-        <div className="lg:col-span-2">
+        <div className="sm:col-span-2 lg:col-span-2">
           <p className="font-display text-2xl font-bold text-white">
             TIBB<span className="text-brand-300">-A-</span>UNANI
           </p>
@@ -33,6 +33,29 @@ export default function Footer() {
             <li><Link className="transition hover:text-white" href="/policies/legal-notice/">Legal Notice</Link></li>
           </ul>
         </nav>
+
+        {/* Contact Us */}
+        <div>
+          <h3 className="text-sm font-bold uppercase tracking-wider text-white">Contact Us</h3>
+          <ul className="mt-4 space-y-3.5 text-sm">
+            <li>
+              <span className="block text-[11px] font-semibold uppercase tracking-wider text-brand-300/80">Phone</span>
+              <a href="tel:+923226644422" className="text-brand-100 transition hover:text-white">+92 322 6644422</a>
+            </li>
+            <li>
+              <span className="block text-[11px] font-semibold uppercase tracking-wider text-brand-300/80">Email</span>
+              <a href="mailto:info@tibb-a-unani.com" className="text-brand-100 transition hover:text-white">info@tibb-a-unani.com</a>
+            </li>
+            <li>
+              <span className="block text-[11px] font-semibold uppercase tracking-wider text-brand-300/80">Address</span>
+              <span className="text-brand-100">Islamabad, Pakistan</span>
+            </li>
+            <li>
+              <span className="block text-[11px] font-semibold uppercase tracking-wider text-brand-300/80">Working Hours</span>
+              <span className="text-brand-100">Mon – Sat · 10:00 am – 8:00 pm</span>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div className="border-t border-brand-900 py-4 text-center text-xs text-brand-100/60">
