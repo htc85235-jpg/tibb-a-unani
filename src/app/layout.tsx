@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { StoreProvider } from "@/lib/store";
@@ -31,11 +30,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
           <WhatsAppFloat />
         </StoreProvider>
-        {/* tawk.to live chat widget — owner property 6ab2861bc85d40344363311f (default widget) */}
-        <Script
-          src="https://embed.tawk.to/6ab2861bc85d40344363311f/default"
-          strategy="afterInteractive"
-        />
+        {/* tawk.to live chat — owner property 6ab2861bc85d40344363311f (default widget).
+            This is tawk's OFFICIAL async embed snippet rendered directly into the static
+            HTML <head> (React 19 hoists async scripts): the browser starts downloading
+            + executing tawk at first paint, in parallel with the page's own JS — not
+            after hydration like next/script did. The widget itself is untouched: 100%
+            real tawk, any change the owner makes in his tawk.to account still applies
+            automatically. */}
+        <link rel="preconnect" href="https://embed.tawk.to" />
+        <link rel="preconnect" href="https://va.tawk.to" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://embed.tawk.to" />
+        <script async src="https://embed.tawk.to/6ab2861bc85d40344363311f/default" />
       </body>
     </html>
   );
