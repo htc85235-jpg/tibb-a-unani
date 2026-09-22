@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { StoreProvider } from "@/lib/store";
@@ -30,6 +31,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
           <WhatsAppFloat />
         </StoreProvider>
+        {/* tawk.to live chat widget — owner property 6ab2861bc85d40344363311f (default widget) */}
+        <Script
+          src="https://embed.tawk.to/6ab2861bc85d40344363311f/default"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
