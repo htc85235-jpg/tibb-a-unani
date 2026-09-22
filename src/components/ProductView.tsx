@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { bySlug, prevNext, related, alsoBought } from "@/lib/products";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -12,12 +11,9 @@ import ProductCard from "@/components/ProductCard";
 import StatsBand from "@/components/StatsBand";
 import TrustBadges from "@/components/TrustBadges";
 import Testimonials from "@/components/Testimonials";
-import { useStore } from "@/lib/store";
 import { policies } from "@/lib/policies";
 
 export default function ProductView({ slug }: { slug: string }) {
-  const router = useRouter();
-  const { addToCart } = useStore();
   const p = bySlug(slug);
   const [cod, setCod] = useState(false);
   const [viewing, setViewing] = useState(p?.viewing ?? 0);
@@ -114,20 +110,12 @@ export default function ProductView({ slug }: { slug: string }) {
             )}
 
             <p className="mt-4 leading-7 text-slate-600">{p.short}</p>
-            <p dir="rtl" lang="ur" className="mt-2 text-lg font-semibold text-brand-700">{p.urdu}</p>
+            {p.urdu && <p dir="rtl" lang="ur" className="mt-2 text-lg font-semibold text-brand-700">{p.urdu}</p>}
 
             {p.inStock && (
               <button onClick={() => setCod(true)} className="btn-primary mt-6 w-full rounded-xl bg-brand-600 py-3.5 text-base shadow-sm shadow-brand-900/20">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 8h12l1 12H5L6 8zm3 0V6a3 3 0 016 0v2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
                 Buy with Cash on Delivery
-              </button>
-            )}
-            {p.inStock && (
-              <button
-                onClick={() => { addToCart(p.slug, 1); router.push("/cart/"); }}
-                className="btn-outline mt-3 w-full rounded-xl"
-              >
-                Add to Cart
               </button>
             )}
 

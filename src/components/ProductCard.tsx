@@ -6,7 +6,7 @@ import Stars from "./Stars";
 import { useStore } from "@/lib/store";
 
 export default function ProductCard({ p, view = "grid" }: { p: Product; view?: "grid" | "list" }) {
-  const { toggleWish, inWish, addToCart } = useStore();
+  const { toggleWish, inWish } = useStore();
   const wished = inWish(p.slug);
   const off = p.compareAt ? Math.round((1 - p.price / p.compareAt) * 100) : 0;
 
@@ -39,18 +39,11 @@ export default function ProductCard({ p, view = "grid" }: { p: Product; view?: "
         loading="lazy"
         className="aspect-square w-full object-cover transition duration-500 group-hover:scale-105"
       />
-      <span
-        onClick={(e) => { e.preventDefault(); if (p.inStock) addToCart(p.slug); }}
-        className={`absolute inset-x-0 bottom-0 translate-y-full bg-brand-600 py-2 text-center text-xs font-bold text-white transition group-hover:translate-y-0 ${p.inStock ? "" : "hidden"}`}
-      >
-        Add to Cart
-      </span>
     </Link>
   );
 
   const body = (
     <div className={view === "list" ? "min-w-0 flex-1" : ""}>
-      <p className="text-[11px] font-semibold uppercase tracking-wider text-brand-600">{p.category}</p>
       <Link href={`/products/${p.slug}/`} className="mt-0.5 block truncate font-display text-base font-bold text-slate-900 transition hover:text-brand-700">
         {p.name}
       </Link>
