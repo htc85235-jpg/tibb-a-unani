@@ -50,10 +50,6 @@ export default function Footer() {
               <span className="block text-[11px] font-semibold uppercase tracking-wider text-brand-300/80">Address</span>
               <span className="text-brand-100">Islamabad, Pakistan</span>
             </li>
-            <li>
-              <span className="block text-[11px] font-semibold uppercase tracking-wider text-brand-300/80">Working Hours</span>
-              <span className="text-brand-100">Mon – Sat · 10:00 am – 8:00 pm</span>
-            </li>
           </ul>
         </div>
       </div>
