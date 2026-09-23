@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Stars from "./Stars";
 
 /* NOTE: reviews may only mention products from the real catalog
-   (Joint Sukoon Oil, Prozon Premium Prostate Support, Men's Vitality Support,
+   (Joint Sukoon Oil, Pruzon Premium Prostate Support, Men's Vitality Support,
    Donkey Oil & Golden Capsule, Pine Height, Sperm Plus Tablets) — no retired/dummy product names. */
 const REVIEWS = [
   { name: "Ayesha K., Lahore", text: "Joint Sukoon Oil ki quality bilkul purane dawakhanay jaisi hai. Packaging bhi neat thi aur delivery sirf do din mein pohanch gayi. Bohat shukriya!", rating: 5 },
