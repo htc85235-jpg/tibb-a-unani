@@ -5,7 +5,7 @@ import { products } from "@/lib/products";
 import Link from "next/link";
 
 export default function FeaturedProducts() {
-  const [shown, setShown] = useState(8);
+  const [shown, setShown] = useState(12);
   const items = products.slice(0, shown);
 
   return (
