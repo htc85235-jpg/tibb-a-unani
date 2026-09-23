@@ -5,9 +5,9 @@ import { site } from "@/lib/site";
 export default function Footer() {
   return (
     <footer className="mt-auto border-t border-slate-100 bg-brand-950 text-brand-100">
-      <div className="container-x grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="container-x grid gap-10 py-12 sm:grid-cols-2">
         {/* About */}
-        <div className="sm:col-span-2 lg:col-span-2">
+        <div>
           <p className="font-display text-2xl font-bold text-white">
             TIBB<span className="text-brand-300">-A-</span>UNANI
           </p>
