@@ -36,11 +36,11 @@ export default function Testimonials() {
       <div className="container-x text-center">
         <h2 className="font-display text-2xl font-bold text-slate-900 sm:text-3xl">What Our Customers Say</h2>
         <div className="relative mx-auto mt-8 max-w-2xl">
-          {/* left / right arrows — visitors can browse reviews in both directions */}
+          {/* arrows kept for click navigation but rendered invisible (opacity-0) per client request */}
           <button
             aria-label="Previous review"
             onClick={() => manual(-1)}
-            className="absolute -left-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-md transition hover:bg-brand-600 hover:text-white lg:-left-14 lg:h-10 lg:w-10"
+            className="absolute -left-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 opacity-0 shadow-md transition hover:bg-brand-600 hover:text-white lg:-left-14 lg:h-10 lg:w-10"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M15 5l-7 7 7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -63,7 +63,7 @@ export default function Testimonials() {
           <button
             aria-label="Next review"
             onClick={() => manual(1)}
-            className="absolute -right-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-md transition hover:bg-brand-600 hover:text-white lg:-right-14 lg:h-10 lg:w-10"
+            className="absolute -right-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 opacity-0 shadow-md transition hover:bg-brand-600 hover:text-white lg:-right-14 lg:h-10 lg:w-10"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
