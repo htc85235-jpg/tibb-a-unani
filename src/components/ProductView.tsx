@@ -58,11 +58,13 @@ export default function ProductView({ slug }: { slug: string }) {
           </div>
         </div>
 
-        <div className="mt-6 grid gap-10 lg:grid-cols-2">
+        {/* 750px breakpoint = same switch point as the reference (Shopify Dawn), so
+            mobile Chrome "Desktop site" mode (~980px viewport) also gets the 2-col layout */}
+        <div className="mt-6 grid gap-10 min-[750px]:grid-cols-2">
           {/* gallery — sticky on desktop: the image stays pinned in the left column
               while the right column (info + description + benefits + policies)
               scrolls, exactly like the reference store. Releases at the other-products grid. */}
-          <div className="flex gap-3 self-start lg:sticky lg:top-24">
+          <div data-testid="gallery-sticky" className="flex gap-3 self-start min-[750px]:sticky min-[750px]:top-24">
             <div className="flex flex-col gap-3">
               <button aria-label="Zoom image" onClick={() => setZoom(true)} className="overflow-hidden rounded-lg border-2 border-brand-500">
                 <img src={p.img} alt={p.name} className="h-16 w-16 object-cover" />
@@ -164,7 +166,7 @@ export default function ProductView({ slug }: { slug: string }) {
           accordions; visitor sees the full catalog minus the product opened */}
       <section className="pb-12 pt-2" aria-label="More products">
         <div className="container-x">
-          <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-4 min-[750px]:grid-cols-4">
             {products.filter((r) => r.slug !== p.slug).map((r) => <ProductCard key={r.slug} p={r} />)}
           </div>
         </div>
@@ -176,7 +178,7 @@ export default function ProductView({ slug }: { slug: string }) {
       <section className="py-12" aria-label="People also bought">
         <div className="container-x">
           <h2 className="font-display text-2xl font-bold text-slate-900">People Also Bought</h2>
-          <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
+          <div className="mt-6 grid grid-cols-2 gap-4 min-[750px]:grid-cols-4">
             {alsoBought(p).map((r) => <ProductCard key={r.slug} p={r} />)}
           </div>
         </div>
