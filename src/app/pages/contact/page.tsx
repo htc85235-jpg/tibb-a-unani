@@ -1,14 +1,17 @@
 "use client";
 import { useState } from "react";
 import { site } from "@/lib/site";
+import { sendContactEmail } from "@/lib/order-email";
 
 export default function ContactPage() {
   const [f, setF] = useState({ name: "", email: "", msg: "" });
   const [agree, setAgree] = useState(false);
   const [errs, setErrs] = useState<Record<string, string>>({});
   const [sent, setSent] = useState(false);
+  const [sendErr, setSendErr] = useState(false);
+  const [busy, setBusy] = useState(false);
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     const er: Record<string, string> = {};
     if (!f.name.trim()) er.name = "Please enter your name";
@@ -16,7 +19,16 @@ export default function ContactPage() {
     if (!agree) er.agree = "Please agree to the Privacy Policy";
     setErrs(er);
     if (Object.keys(er).length) return;
-    setSent(true);
+    setBusy(true);
+    setSendErr(false);
+    /* deliver the message to the owner's Gmail via FormSubmit */
+    const ok = await sendContactEmail(f.name.trim(), f.email.trim(), f.msg);
+    setBusy(false);
+    if (ok) {
+      setSent(true);
+    } else {
+      setSendErr(true);
+    }
   };
 
   return (
@@ -35,7 +47,7 @@ export default function ContactPage() {
               </span>
               <p className="mt-4 font-display text-xl font-bold text-slate-900">Message sent!</p>
               <p className="mt-1 text-sm text-slate-500">Thank you — we will reply within one working day.</p>
-              <button onClick={() => { setSent(false); setF({ name: "", email: "", msg: "" }); }} className="btn-outline mt-5">Send another</button>
+              <button onClick={() => { setSent(false); setSendErr(false); setF({ name: "", email: "", msg: "" }); }} className="btn-outline mt-5">Send another</button>
             </div>
           ) : (
             <form onSubmit={submit} noValidate>
@@ -62,7 +74,12 @@ export default function ContactPage() {
                   </label>
                   {errs.agree && <p className="mt-1 text-xs text-sale">{errs.agree}</p>}
                 </div>
-                <button type="submit" className="btn-primary w-full">Send</button>
+                <button type="submit" disabled={busy} className="btn-primary w-full disabled:opacity-60">{busy ? "SENDING…" : "Send"}</button>
+                {sendErr && (
+                  <p className="text-xs leading-5 text-sale">
+                    The message could not be sent right now — please try again, or message us on WhatsApp for a faster reply.
+                  </p>
+                )}
               </div>
             </form>
           )}

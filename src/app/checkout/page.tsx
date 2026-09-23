@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useStore } from "@/lib/store";
 import { rs } from "@/lib/format";
+import { sendOrderEmail } from "@/lib/order-email";
 
 export default function CheckoutPage() {
   const router = useRouter();
@@ -26,7 +27,7 @@ export default function CheckoutPage() {
   const set = (k: keyof typeof f) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setF((v) => ({ ...v, [k]: e.target.value }));
 
-  const complete = () => {
+  const complete = async () => {
     const e: Record<string, string> = {};
     if (!f.name.trim()) e.name = "Full name is required";
     if (!/^0?[0-9]{10}$/.test(f.phone.replace(/[\s-]/g, ""))) e.phone = "Enter a valid phone number (e.g. 0322 6644422)";
@@ -46,6 +47,9 @@ export default function CheckoutPage() {
       city: f.city.trim(),
       subscribe,
     });
+    /* email the owner the order receipt (FormSubmit); never blocks or fails the order itself */
+    const mailed = await sendOrderEmail(order);
+    if (!mailed) console.warn("order email failed — order still placed locally", order.id);
     router.push(`/order-confirmation/?id=${order.id}`);
   };
 
