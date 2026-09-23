@@ -16,9 +16,7 @@ export default function Footer() {
             We prepare time-tested Unani remedies the classical way — pure herbs, slow methods and lab-tested
             batches. From our family of Hakims to your home, {site.tagline.toLowerCase()}.
           </p>
-          <p className="mt-4 text-sm text-brand-100/70">
-            {site.address}<br />{site.phone} · {site.email}
-          </p>
+          <p className="mt-4 text-sm text-brand-100/70">{site.address}</p>
         </div>
 
         {/* Information */}
