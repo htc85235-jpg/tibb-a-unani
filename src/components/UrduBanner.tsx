@@ -17,7 +17,7 @@ export default function UrduBanner() {
         <p className="mt-3 text-sm font-semibold uppercase tracking-[0.25em] text-brand-300">
           The Wisdom of Unani Tibb — Pure, Natural, Timeless
         </p>
-        <a href="#about" className="btn-outline mt-8 border-brand-300 text-brand-100 hover:bg-brand-800">
+        <a href="#about" className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-brand-900 shadow-lg shadow-black/25 transition hover:bg-brand-50 hover:shadow-xl">
           Watch Our Story
         </a>
       </div>
