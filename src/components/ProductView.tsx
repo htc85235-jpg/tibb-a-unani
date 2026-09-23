@@ -59,8 +59,10 @@ export default function ProductView({ slug }: { slug: string }) {
         </div>
 
         <div className="mt-6 grid gap-10 lg:grid-cols-2">
-          {/* gallery */}
-          <div className="flex gap-3">
+          {/* gallery — sticky on desktop: the image stays pinned in the left column
+              while the right column (info + description + benefits + policies)
+              scrolls, exactly like the reference store. Releases at "Pairs well with". */}
+          <div className="flex gap-3 self-start lg:sticky lg:top-24">
             <div className="flex flex-col gap-3">
               <button aria-label="Zoom image" onClick={() => setZoom(true)} className="overflow-hidden rounded-lg border-2 border-brand-500">
                 <img src={p.img} alt={p.name} className="h-16 w-16 object-cover" />
@@ -116,40 +118,44 @@ export default function ProductView({ slug }: { slug: string }) {
               </button>
             )}
 
-            <div className="mt-7">
+            {/* description — lives in the right column so the sticky image keeps it
+                company all the way down (same function as the reference site) */}
+            <div className="mt-10 border-t border-slate-100 pt-8">
+              <h2 className="font-display text-2xl font-bold text-slate-900">Description</h2>
+              {p.description.map((d, i) =>
+                d.startsWith("## ") ? (
+                  <h3 key={i} dir="auto" className="mt-5 font-display text-lg font-bold text-slate-900">{d.slice(3)}</h3>
+                ) : (
+                  <p key={i} dir="auto" className="mt-3 leading-7 text-slate-600">{d}</p>
+                )
+              )}
+            </div>
+
+            {/* benefits & dosage */}
+            <div className="mt-10">
+              <h2 className="font-display text-2xl font-bold text-slate-900">Benefits & Dosage</h2>
+              <ul className="mt-3 space-y-2">
+                {p.benefits.map((b, i) => (
+                  <li key={i} dir="auto" className="flex items-start gap-2.5 text-slate-600">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="mt-1 shrink-0 text-brand-600"><path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                    {b}
+                  </li>
+                ))}
+              </ul>
+              <p dir="auto" className="mt-4 rounded-xl bg-brand-50 p-4 text-sm leading-6 text-brand-900"><b>Dosage:</b> {p.dosage}</p>
+            </div>
+
+            {/* Shipping and Returns + Return Policies — in Urdu, closed by default,
+                opened with the + icon; placed after the description part and above
+                the "Pairs well with" section, matching the reference store */}
+            <div className="mt-10">
               <Accordion
                 items={[
-                  { title: "Shipping and Returns", body: shipPolicy.body.slice(0, 2) },
-                  { title: "Return Policies", body: refundPolicy.body.slice(0, 2) },
+                  { title: "Shipping and Returns", body: shipPolicy.bodyUrdu ?? shipPolicy.body },
+                  { title: "Return Policies", body: refundPolicy.bodyUrdu ?? refundPolicy.body },
                 ]}
               />
             </div>
-          </div>
-        </div>
-
-        {/* description */}
-        <div className="mt-12 grid gap-10 lg:grid-cols-2">
-          <div>
-            <h2 className="font-display text-2xl font-bold text-slate-900">Description</h2>
-            {p.description.map((d, i) =>
-              d.startsWith("## ") ? (
-                <h3 key={i} dir="auto" className="mt-5 font-display text-lg font-bold text-slate-900">{d.slice(3)}</h3>
-              ) : (
-                <p key={i} dir="auto" className="mt-3 leading-7 text-slate-600">{d}</p>
-              )
-            )}
-          </div>
-          <div>
-            <h2 className="font-display text-2xl font-bold text-slate-900">Benefits & Dosage</h2>
-            <ul className="mt-3 space-y-2">
-              {p.benefits.map((b, i) => (
-                <li key={i} dir="auto" className="flex items-start gap-2.5 text-slate-600">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="mt-1 shrink-0 text-brand-600"><path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                  {b}
-                </li>
-              ))}
-            </ul>
-            <p dir="auto" className="mt-4 rounded-xl bg-brand-50 p-4 text-sm leading-6 text-brand-900"><b>Dosage:</b> {p.dosage}</p>
           </div>
         </div>
       </div>
