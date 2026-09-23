@@ -9,7 +9,7 @@ export default function Footer() {
         {/* About */}
         <div>
           <p className="font-display text-2xl font-bold text-white">
-            TIBB<span className="text-brand-300">-A-</span>UNANI
+            TIBB<span className="text-brand-300">-E-</span>UNANI
           </p>
           <p className="mt-1 text-xs font-semibold tracking-[0.22em] text-brand-300">{site.sub.toUpperCase()}</p>
           <p className="mt-4 max-w-md text-sm leading-6 text-brand-100/80">

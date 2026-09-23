@@ -1,15 +1,15 @@
 /* Site-wide configuration */
 export const site = {
-  name: "Tibb-a-Unani",
+  name: "Tibb-e-Unani",
   tagline: "Ancient Hikmat, Pure Healing",
   sub: "Herbal & Unani Remedies",
   /* Client's real number (international format for wa.me) */
   phone: "+92 322 6644422",
   whatsapp: "923226644422",
-  email: "info@tibb-a-unani.com",
+  email: "info@tibb-e-unani.com",
   address: "Islamabad, Pakistan",
   hours: "Mon – Sat · 10:00 am – 8:00 pm",
-  domain: "tibb-a-unani.com",
+  domain: "tibb-e-unani.com",
   announcements: [
     "Welcome! Your journey to pure, natural healing starts here",
     "The Wisdom of Unani Tibb — 100% Natural & Lab Tested",

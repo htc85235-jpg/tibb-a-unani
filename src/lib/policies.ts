@@ -8,7 +8,7 @@ export const policies: Policy[] = [
     slug: "privacy-policy",
     title: "Privacy Policy",
     body: [
-      "This Privacy Policy explains what information Tibb-a-Unani collects when you use our website, why we collect it, and how we keep it safe. By using this website you agree to the practices described here.",
+      "This Privacy Policy explains what information Tibb-e-Unani collects when you use our website, why we collect it, and how we keep it safe. By using this website you agree to the practices described here.",
       "We collect only the information needed to serve you: your name, phone number and delivery address when you place a Cash on Delivery order, and your email address if you choose to subscribe to our offers. We never sell, rent or trade your personal information to any third party.",
       "Order details may be shared with our delivery partners strictly for the purpose of shipping your parcel. Payment is collected in cash at your doorstep, so we never ask for your bank details or card numbers.",
       "You may ask us at any time to update or delete your information by contacting us through the details on our Contact Information page. We keep order records only as long as needed to serve warranties and legal requirements.",
@@ -48,7 +48,7 @@ export const policies: Policy[] = [
     slug: "terms-of-service",
     title: "Terms of Service",
     body: [
-      "Welcome to Tibb-a-Unani. By browsing or ordering from this website you agree to these terms, which exist to keep the experience fair and safe for both sides.",
+      "Welcome to Tibb-e-Unani. By browsing or ordering from this website you agree to these terms, which exist to keep the experience fair and safe for both sides.",
       "Our herbal products are traditional Unani preparations. They support wellbeing but are not a replacement for emergency or specialist medical treatment. If you are pregnant, nursing, or taking regular medication, please consult your physician or Hakeem before use.",
       "Prices are listed in Pakistani Rupees and may change without prior notice. Product photos on this website may be representative; natural products can vary slightly in colour and aroma from batch to batch.",
       "Misuse of this website — including false orders or abusive behaviour with our support staff — may result in order refusal. These terms are governed by the laws of Pakistan.",
@@ -60,7 +60,7 @@ export const policies: Policy[] = [
     body: [
       "We love hearing from you. For order questions, product guidance or Hakeem advice, reach us through any of the channels below and we will respond during working hours.",
       "Phone / WhatsApp: +92 322 6644422 (10:00 am – 8:00 pm, Mon–Sat)",
-      "Email: info@tibb-a-unani.com",
+      "Email: info@tibb-e-unani.com",
       "Address: Islamabad, Pakistan",
       "The fastest response is usually on WhatsApp — send us your question and our team replies with product suggestions, dosage guidance and order tracking updates.",
     ],
@@ -69,7 +69,7 @@ export const policies: Policy[] = [
     slug: "legal-notice",
     title: "Legal Notice",
     body: [
-      "Tibb-a-Unani is a herbal products brand. All content on this website — including text, graphics, logos and product descriptions — is the property of Tibb-a-Unani and may not be copied or reused without written permission.",
+      "Tibb-e-Unani is a herbal products brand. All content on this website — including text, graphics, logos and product descriptions — is the property of Tibb-e-Unani and may not be copied or reused without written permission.",
       "Our products are traditional Unani/herbal food supplements and topical preparations. Statements on this website describe traditional uses and are not evaluated as medical claims. Results can vary from person to person.",
       "Nothing on this website should be interpreted as a prescription. Always follow the dosage on the label or the advice of a qualified Hakeem. Keep all products out of the reach of children.",
       "If you believe any content on this website infringes your rights, please notify us with details and we will review and, if required, remove the content promptly.",

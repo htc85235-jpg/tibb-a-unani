@@ -14,7 +14,7 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfa
 export const metadata: Metadata = {
   title: { default: `${site.name} — ${site.sub}`, template: `%s | ${site.name}` },
   description:
-    "Tibb-a-Unani — pure herbal & Unani remedies prepared the classical way. 100% natural, lab tested, cash on delivery all over Pakistan.",
+    "Tibb-e-Unani — pure herbal & Unani remedies prepared the classical way. 100% natural, lab tested, cash on delivery all over Pakistan.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

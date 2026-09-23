@@ -88,12 +88,12 @@ export default function Header() {
         {/* centre: wordmark + client emblem on its right — perfectly centred on every viewport */}
         <Link
           href="/"
-          aria-label="Tibb-a-Unani — Herbal & Unani Remedies"
+          aria-label="Tibb-e-Unani — Herbal & Unani Remedies"
           className="flex items-center justify-center gap-2 leading-none sm:gap-3"
         >
           <img
             src="/images/logo-header.png"
-            alt="Tibb-a-Unani — Herbal & Unani Remedies"
+            alt="Tibb-e-Unani — Herbal & Unani Remedies"
             className="h-7 w-auto sm:h-10 lg:h-12 xl:h-14"
           />
           <img

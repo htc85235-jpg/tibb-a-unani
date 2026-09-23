@@ -65,7 +65,7 @@ export default function LoginPage() {
           {mode === "in" ? "Sign in" : "Create account"}
         </h1>
         <p className="mt-2 text-center text-sm text-slate-500">
-          {mode === "in" ? "Welcome back to Tibb-a-Unani." : "Track orders and check out faster."}
+          {mode === "in" ? "Welcome back to Tibb-e-Unani." : "Track orders and check out faster."}
         </p>
 
         <form onSubmit={submit} noValidate className="card mt-7 space-y-4 p-6">

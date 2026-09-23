@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const SLIDES = [
   {
-    kicker: "Tibb-a-Unani",
+    kicker: "Tibb-e-Unani",
     title: "Ancient Hikmat, Pure Healing.",
     sub: "100% Natural & Lab-Tested Herbal Remedies for the Whole Family.",
     cta: "Shop Remedies",

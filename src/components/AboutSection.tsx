@@ -11,7 +11,7 @@ export default function AboutSection() {
             Three Generations of Hikmat, One Promise of Purity
           </h2>
           <p className="mt-5 leading-7 text-slate-600">
-            Tibb-a-Unani began as the family dispensary of a village Hakeem who believed that nature, used
+            Tibb-e-Unani began as the family dispensary of a village Hakeem who believed that nature, used
             wisely, heals gently. Today the same family prepares classical Unani remedies — majoons, khamiras,
             sharbats and oils — in small, carefully supervised batches.
           </p>

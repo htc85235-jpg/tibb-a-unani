@@ -65,7 +65,7 @@ function postViaHiddenForm(fields: Record<string, string>): boolean {
    FormSubmit's "table" template (one row per field, items as separate rows). */
 export async function sendOrderEmail(o: OrderPayload): Promise<boolean> {
   return postViaHiddenForm({
-    _subject: `New Order ${o.id} — Tibb-a-Unani (Cash on Delivery)`,
+    _subject: `New Order ${o.id} — Tibb-e-Unani (Cash on Delivery)`,
     _template: "table",
     _captcha: "false",
     "Order ID": o.id,
