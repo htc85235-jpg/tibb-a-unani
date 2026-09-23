@@ -5,7 +5,9 @@
    "حلکیلئے" — do not "fix"); items 1-5 are ORIGINAL Urdu copy written to match each
    product's own label/picture claims (ingredient lists provisional — client to verify).
    Categories/sizes aligned to the pictures (30 ml oil, 30/90 capsule counts, course/set).
-   Items 7-10 are numbered placeholders; prices for items 1-5 are still dummy. */
+   Dummy items 7-10 removed at client's request (2026-09-23) — new products will be added when the
+   client supplies pictures/descriptions. pairWith refs point to the 6 real products only.
+   Prices for items 1-5 are still dummy. */
 
 export type Product = {
   slug: string;
@@ -89,7 +91,7 @@ export const products: Product[] = [
       "کوئی سائیڈ ایفیکٹ نہیں",
     ],
     dosage: "متاثرہ جگہ پر تھوڑی سی مقدار لے کر ہلکی مالش کریں، دن میں دو تین بار، یا اپنے حکیم کی ہدایت کے مطابق۔",
-    pairWith: ["roghan-baadam-shirin", "khamira-gilo-himalayi"],
+    pairWith: ["khamira-gilo-himalayi", "khamira-abresham"],
   },
   {
     slug: "majoon-muqavvi-dimagh",
@@ -146,7 +148,7 @@ export const products: Product[] = [
       "کوئی سائیڈ ایفیکٹ نہیں",
     ],
     dosage: "روزانہ استعمال کیلئے بہترین، یا اپنے حکیم کی ہدایت کے مطابق۔",
-    pairWith: ["itrifal-ustukhuddus", "roghan-baadam-shirin"],
+    pairWith: ["sharbat-faulad", "majoon-jograj-guggul"],
   },
   {
     slug: "majoon-jograj-guggul",
@@ -203,7 +205,7 @@ export const products: Product[] = [
       "مکمل کورس کے ساتھ دیرپا فائدہ",
     ],
     dosage: "مکمل کورس باقاعدگی سے مکمل کریں، یا اپنے حکیم کی ہدایت کے مطابق۔",
-    pairWith: ["roghan-babchi", "khamira-abresham"],
+    pairWith: ["sharbat-faulad", "khamira-gilo-himalayi"],
   },
   {
     slug: "khamira-gilo-himalayi",
@@ -317,7 +319,7 @@ export const products: Product[] = [
       "کوئی سائیڈ ایفیکٹ نہیں",
     ],
     dosage: "مکمل کورس باقاعدگی سے مکمل کریں، یا اپنے حکیم کی ہدایت کے مطابق۔",
-    pairWith: ["sharbat-bazoori-motadil", "majoon-e-shahi"],
+    pairWith: ["majoon-e-shahi", "majoon-muqavvi-dimagh"],
   },
   {
     slug: "sharbat-faulad",
@@ -375,123 +377,6 @@ export const products: Product[] = [
     ],
     dosage: "روزانہ استعمال کیلئے بہترین، یا اپنے حکیم کی ہدایت کے مطابق۔",
     pairWith: ["khamira-gilo-himalayi", "majoon-e-shahi"],
-  },
-  {
-    slug: "sharbat-bazoori-motadil",
-    name: "Product 7",
-    urdu: "",
-    category: "Sharbat",
-    size: "500 ml",
-    price: 2100,
-    compareAt: 2500,
-    img: "/images/p_syrup.png",
-    rating: 4.7,
-    reviews: 298,
-    sold24: 22,
-    viewing: 15,
-    inStock: true,
-    bestseller: true,
-    fresh: false,
-    short: "Cooling liver tonic sharbat with bazoori seeds — the classical choice for liver heat and summer fatigue.",
-    description: [
-      "Bazoori Motadil is a balanced (motadil) liver sharbat built around cooling bazoori seeds and delicate aromatic herbs. Classical physicians reached for it whenever the liver was hot, the temper short and the body tired.",
-      "Taken chilled in summer, it is a family favourite for keeping the liver calm and the mood even.",
-    ],
-    benefits: [
-      "Classical cooling liver tonic",
-      "Eases liver heat and summer fatigue",
-      "Supports calm, even mood",
-      "Delicious served chilled",
-    ],
-    dosage: "Two tablespoons with water morning and evening, or as directed by your Hakeem.",
-    pairWith: ["sharbat-faulad", "khamira-abresham"],
-  },
-  {
-    slug: "roghan-babchi",
-    name: "Product 8",
-    urdu: "",
-    category: "Roghan",
-    size: "50 ml",
-    price: 1450,
-    img: "/images/p_oil.png",
-    rating: 4.7,
-    reviews: 241,
-    sold24: 16,
-    viewing: 21,
-    inStock: true,
-    fresh: false,
-    short: "Classical babchi seed oil traditionally massaged on the skin to support even tone and natural colour.",
-    description: [
-      "Roghan Babchi is prepared by infusing babchi seeds — one of the most respected herbs in Unani dermatology — into a nourishing oil base under gentle heat.",
-      "Applied locally with a light massage, it has long been used for skin tone, spots and dryness. A patch test is recommended before first use.",
-    ],
-    benefits: [
-      "Traditional oil for skin tone and spots",
-      "Supports naturally even, healthy skin",
-      "Prepared from pure babchi seeds",
-      "Light, fast-absorbing base oil",
-    ],
-    dosage: "Apply a few drops on affected skin twice daily with gentle massage, or as directed by your Hakeem.",
-    pairWith: ["majoon-jograj-guggul", "roghan-baadam-shirin"],
-  },
-  {
-    slug: "roghan-baadam-shirin",
-    name: "Product 9",
-    urdu: "",
-    category: "Roghan",
-    size: "100 ml",
-    price: 1200,
-    img: "/images/p_oil.png",
-    rating: 4.8,
-    reviews: 356,
-    sold24: 30,
-    viewing: 23,
-    inStock: true,
-    bestseller: true,
-    fresh: false,
-    short: "Pure sweet almond oil — the family classic for brain, hair, skin and gentle daily nourishment.",
-    description: [
-      "Cold-pressed from sweet almonds (baadam shirin), this clear golden oil is one of the most loved household oils in Unani tradition — a spoonful for the brain and body, a few drops for hair and skin.",
-      "It is 100% pure with nothing added: no fragrance, no mineral oil, no preservatives.",
-    ],
-    benefits: [
-      "100% pure cold-pressed sweet almond oil",
-      "Traditionally taken for brain and body strength",
-      "Excellent for hair, scalp and soft skin",
-      "Safe for the whole family",
-    ],
-    dosage: "Half teaspoon daily for adults; a few drops for hair and skin as needed.",
-    pairWith: ["majoon-e-shahi", "majoon-muqavvi-dimagh"],
-  },
-  {
-    slug: "habbe-mumsik",
-    name: "Product 10",
-    urdu: "",
-    category: "Habbe",
-    size: "20 pills",
-    price: 2200,
-    compareAt: 2650,
-    img: "/images/p_pills.png",
-    rating: 4.8,
-    reviews: 517,
-    sold24: 34,
-    viewing: 27,
-    inStock: true,
-    bestseller: true,
-    fresh: false,
-    short: "Classical herbal pills traditionally taken for male strength, stamina and confidence — discreet ordering.",
-    description: [
-      "Habbe Mumsik Titraje is one of the most prescribed classical compounds for male sexual health. Small pills of warming herbs are taken over a course of days, gently building strength rather than forcing it.",
-      "Each pill is made from pure herbs — no modern pharmaceuticals — and is packed discreetly with plain, unmarked outer packaging.",
-    ],
-    benefits: [
-      "Classical support for male strength and stamina",
-      "Herbal course — no pharmaceutical drugs",
-      "Builds gradually, dose by dose",
-      "Discreet, unmarked packaging",
-    ],
-    dosage: "One pill at bedtime with warm milk on the days directed by your Hakeem.",
-    pairWith: ["majoon-e-shahi", "roghan-baadam-shirin"],
   },
 ];
 
