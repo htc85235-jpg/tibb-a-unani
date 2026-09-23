@@ -12,7 +12,13 @@
    names + prices supplied by client; descriptions VERBATIM from the reference product
    pages the client linked (name mentions swapped to the client's product names);
    pictures downloaded from the client's gofile folder. Items 1-6 price updates:
-   Men's Vitality Support 3500, Donkey Oil & Golden Capsule 3500, Pine Height 3800. */
+   Men's Vitality Support 3500, Donkey Oil & Golden Capsule 3500, Pine Height 3800.
+   Item 11 (2026-09-23): Piles Cure Oil — client-supplied product (Rs 3200); description
+   translated to Urdu from https://www.virsawellness.com.pk/products/piles-off-oil;
+   picture supplied by the client.
+   Compare-at ("cut") prices added to ALL products (2026-09-23): marketing strike-through
+   values 400-700 above each real price (Sperm Plus 900 kept as client cited it) —
+   real prices unchanged. */
 
 export type Product = {
   slug: string;
@@ -105,6 +111,7 @@ export const products: Product[] = [
     category: "Capsule",
     size: "30 Capsules",
     price: 3200,
+    compareAt: 3800,
     img: "/images/pruzon-prostate-support.jpg",
     rating: 4.9,
     reviews: 284,
@@ -162,6 +169,7 @@ export const products: Product[] = [
     category: "Capsule",
     size: "1 Course",
     price: 3500,
+    compareAt: 3900,
     img: "/images/mens-vitality-support.jpg",
     rating: 4.6,
     reviews: 176,
@@ -218,6 +226,7 @@ export const products: Product[] = [
     category: "Roghan",
     size: "1 Set",
     price: 3500,
+    compareAt: 4150,
     img: "/images/donkey-oil-golden-capsule.jpg",
     rating: 4.9,
     reviews: 398,
@@ -275,6 +284,7 @@ export const products: Product[] = [
     category: "Capsule",
     size: "90 Capsules",
     price: 3800,
+    compareAt: 4300,
     img: "/images/pine-height.jpg",
     rating: 4.8,
     reviews: 221,
@@ -388,6 +398,7 @@ export const products: Product[] = [
     category: "Majoon",
     size: "1 Course",
     price: 3750,
+    compareAt: 4300,
     img: "/images/akseer-fatty-liver.jpg",
     rating: 4.7,
     reviews: 143,
@@ -443,6 +454,7 @@ export const products: Product[] = [
     category: "Capsule",
     size: "1 Course",
     price: 3000,
+    compareAt: 3500,
     img: "/images/body-grow.jpg",
     rating: 4.6,
     reviews: 118,
@@ -471,6 +483,7 @@ export const products: Product[] = [
     category: "Capsule",
     size: "1 Course",
     price: 3500,
+    compareAt: 4200,
     img: "/images/aller-fine-care.jpg",
     rating: 4.7,
     reviews: 96,
@@ -522,6 +535,7 @@ export const products: Product[] = [
     category: "Capsule",
     size: "1 Course",
     price: 3500,
+    compareAt: 3950,
     img: "/images/garlicum.jpg",
     rating: 4.6,
     reviews: 87,
@@ -543,6 +557,57 @@ export const products: Product[] = [
     ],
     dosage: "مکمل کورس باقاعدگی سے مکمل کریں، یا اپنے حکیم کی ہدایت کے مطابق۔",
     pairWith: ["majoon-e-shahi", "sharbat-faulad"],
+  },
+  {
+    slug: "piles-cure-oil",
+    name: "Piles Cure Oil",
+    urdu: "پائلز کیور آئل",
+    category: "Roghan",
+    size: "30 ml",
+    price: 3200,
+    compareAt: 3700,
+    img: "/images/piles-cure-oil.jpg",
+    rating: 4.7,
+    reviews: 109,
+    sold24: 12,
+    viewing: 8,
+    inStock: true,
+    fresh: true,
+    short: "پائلز کیور آئل باسور (Piles) کے درد، خارش اور جلن میں فوری آرام کیلئے خالص قدرتی جڑی بوٹیوں سے تیار کردہ ہربل آئل ہے۔",
+    description: [
+      "## 🌿 باسور (Piles) کیلئے قدرتی آرام دہ ہربل آئل – پائلز کیور آئل",
+      "پائلز کیور آئل ایک خالص قدرتی ہربل فارمولا ہے جو باسور (Piles) کے درد، خارش اور جلن میں فوری اور مؤثر آرام فراہم کرنے کیلئے تیار کیا گیا ہے۔ اس میں احتیاط سے منتخب کردہ یونانی جڑی بوٹیاں اور قدرتی ایسینشل آئلز شامل ہیں جو سوزش میں کمی، دراڑوں (Fissures) کے بھرنے اور آنتوں کی روانی کو بہتر بنانے میں مدد دیتے ہیں — بغیر کسی نقصان دہ کیمیکل کے۔",
+      "## ✨ اہم فوائد",
+      "✔️ درد اور خارش میں آرام – ٹھنڈک اور سکون بخش اثر جلن اور تکلیف میں فوری بہتری دیتا ہے۔",
+      "✔️ سوزش اور ورم میں کمی – باسور کی گلٹیوں کو قدرتی طریقے سے سکڑانے اور دوبارہ ہونے سے بچانے میں مددگار۔",
+      "✔️ زخم بھرنے میں مدد – متاثرہ جلد کو غذائیت فراہم کر کے دراڑوں (Fissures) کے جلد بھرنے کی حمایت کرتا ہے۔",
+      "✔️ آنتوں کی روانی میں بہتری – پاخانے کی راہ ہموار بناتا ہے اور زور لگانے کی تکلیف کم کرتا ہے۔",
+      "✔️ 100% قدرتی اور محفوظ – کیمیکل، پیرابن اور منرل آئل سے پاک، روزانہ استعمال کیلئے نرم اور مؤثر۔",
+      "## 🌱 فوائد ایک نظر میں",
+      "باسور کے درد اور جلن میں آرام",
+      "سوزش اور ورم میں کمی",
+      "دراڑوں (Fissures) کے بھرنے میں مدد",
+      "آنتوں کی روانی میں بہتری",
+      "کوئی سائیڈ ایفیکٹ نہیں",
+      "## 🌟 کیوں منتخب کریں پائلز کیور آئل؟",
+      "✅ خالص قدرتی جڑی بوٹیوں سے تیار کردہ",
+      "✅ باسور کیلئے خصوصی فارمولا",
+      "✅ تیزی سے جذب ہونے والا سکون بخش آئل",
+      "✅ روزانہ استعمال کیلئے محفوظ",
+      "## 📞 آرڈر کرنے کے لیے",
+      "📦 آن لائن آرڈر دیں اور گھر بیٹھے حاصل کریں 🚚 ملک بھر میں فاسٹ ڈلیوری 💳 کیش آن ڈیلیوری کی سہولت",
+      "## 🩺 قدرتی شفا، خالص جڑی بوٹیوں سے!",
+      "پائلز کیور آئل – باسور کے درد اور جلن سے نجات کا قدرتی حل۔ 🌿✨",
+    ],
+    benefits: [
+      "درد اور خارش میں فوری آرام",
+      "سوزش اور ورم میں کمی",
+      "دراڑوں (Fissures) کے بھرنے میں مددگار",
+      "آنتوں کی روانی میں بہتری",
+      "100% قدرتی، کیمیکل فری",
+    ],
+    dosage: "متاثرہ جگہ کو صاف کر کے تھوڑی سی مقدار نرم ہاتھ سے لگائیں، دن میں دو تین بار، یا اپنے حکیم کی ہدایت کے مطابق۔",
+    pairWith: ["majoon-e-shahi", "khamira-gilo-himalayi"],
   },
 ];
 
