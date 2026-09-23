@@ -1,7 +1,9 @@
-/* DUMMY product catalog — first 5 items use the client's supplied product
-   pictures & names; items 6-10 are numbered placeholders. Names, prices,
-   descriptions & details will be replaced with the client's real data later.
-   All copy is original placeholder text. */
+/* Product catalog — items 1-6 use the client's supplied pictures & names.
+   Item 6 (Sperm Plus Tablets) carries the VERBATIM description, benefits and
+   price copied unchanged from https://hakeembabar.health/products/spermplus
+   (including the source's own spacing, e.g. "حلکیلئے") — do not "fix" it.
+   Items 7-10 are numbered placeholders; prices for items 1-5 are still dummy
+   until the client supplies real data. All other copy is original placeholder text. */
 
 export type Product = {
   slug: string;
@@ -177,30 +179,59 @@ export const products: Product[] = [
   },
   {
     slug: "sharbat-faulad",
-    name: "Product 6",
-    urdu: "",
-    category: "Sharbat",
-    size: "500 ml",
-    price: 1800,
-    img: "/images/p_syrup.png",
+    name: "Sperm Plus Tablets",
+    urdu: "سپرم پلس ٹیبلٹس",
+    category: "Capsule",
+    size: "1 Course",
+    price: 3500,
+    compareAt: 4400,
+    img: "/images/sperm-plus.jpg",
     rating: 4.6,
     reviews: 189,
     sold24: 18,
     viewing: 13,
     inStock: true,
     fresh: true,
-    short: "Iron-rich herbal syrup traditionally used to support healthy blood, color and daily energy.",
+    short: "اسپرم پلس کیپسول ایک خالص قدرتی ہربل فارمولا ہے جو مردانہ صحت کو بہتر بنانے اور سپرم کے مسائل کے حلکیلئے تیار کیا گیا ہے۔",
     description: [
-      "Sharbat Faulad is a classical iron syrup prepared from herbal iron (faulad) processed the Unani way — purified, ground and infused with aromatic digestives so it stays gentle on the stomach.",
-      "It is traditionally taken in recovery periods, during weakness, and by women needing natural blood support.",
+      "## مختصر تعارف",
+      "اسپرم پلس کیپسول ایک خالص قدرتی ہربل فارمولا ہے جو مردانہ صحت کو بہتر بنانے اور سپرم کے مسائل کے حلکیلئے تیار کیا گیا ہے۔ یہ کیپسول خاص طور پر بے اولادی، سپرم کی کمی، نل اسپرم، ایزو اسپرمیا، نیکروسپرمیہ اور اولیگوسپرمیہ جیسے مسائل میں نہایت مؤثر ہے۔ باقاعدہ استعمال سے یہ سپرم کی مقدار اور معیار کو بہتر بناتا ہے اور مردانہ طاقت میں اضافہ کرتا ہے۔",
+      "## ✨ تفصیلی تعارف",
+      "اسپرم پلس کیپسول ایک آزمودہ اور محفوظ نسخہ ہے جو خاص طور پر ان مردوںکیلئے بنایا گیا ہے جو سپرم کی کمی یا تولیدی مسائل کا شکار ہیں۔",
+      "✔️ بے اولادیکیلئے مؤثر – مردانہ بانجھ پن میں بہتری لا کر اولاد کا امکان بڑھاتا ہے۔",
+      "✔️ سپرم کی کمی دورکرنےکیلئے – سپرم کی تعداد اور حرکت (حرکت پذیری) بڑھاتا ہے۔",
+      "✔️ نل اسپرم اور ایزو اسپرمیاکیلئے – سپرم پیداوار کو بڑھا کر تولیدی صلاحیت میں اضافہ کرتا ہے۔",
+      "✔️ نیکروسپرمیہ (مردہ سپرم)کیلئے – سپرم کے معیار کو بہتر بناتا ہے تاکہ صحت مند نطفہ پیدا ہوسکے۔",
+      "✔️ اولیگوسپرمیہ (سپرم کی کمی)کیلئے – سپرم کی تعداد بڑھاتا ہے اور نطفہ مضبوط بناتا ہے۔",
+      "✔️ عمومی کمزوریکیلئے – جسمانی اور مردانہ طاقت میں اضافہ کرتا ہے۔",
+      "یہ کیپسول مکمل طور پر ہربل، کیمیکل فری اور روزانہ استعمالکیلئے محفوظ ہے۔",
+      "## 🌱 فوائد ایک نظر میں",
+      "مردانہ بانجھ پن (بے اولادی) میں بہتری",
+      "سپرم کی تعداد اور حرکت میں اضافہ",
+      "نل اسپرم اور ایزو اسپرمیا میں مؤثر",
+      "نیکروسپرمیہ اور اولیگوسپرمیہ میں سپرم کا معیار بہتر",
+      "جسمانی اور جنسی کمزوری میں طاقت بحال",
+      "## ⚡ اجزاء (Ingredients)",
+      "اسپرم پلس کیپسول اعلیٰ معیار کی قدرتی جڑی بوٹیوں سے تیار کیا گیا ہے جنہیں صدیوں سے مردانہ صحتکیلئے استعمال کیا جا رہا ہے:",
+      "سفوف کونچ",
+      "اشوگندھا",
+      "آملہ",
+      "جائفل",
+      "اور دیگر جگر و مردانہ صحت دوست اجزاء",
+      "## 🌟 کیوں منتخب کریں اسپرم پلس کیپسول؟",
+      "✅ قدرتی اور محفوظ",
+      "✅ بانجھ پن اور سپرم مسائلکیلئے مؤثر",
+      "✅ مردانہ طاقت میں اضافہ",
+      "✅ روزانہ استعمالکیلئے بہترین",
     ],
     benefits: [
-      "Traditional herbal iron tonic",
-      "Supports healthy blood and natural color",
-      "Gentle on digestion — no constipation",
-      "Pleasant taste, easy to take daily",
+      "مردانہ بانجھ پن (بے اولادی) میں بہتری",
+      "سپرم کی تعداد اور حرکت میں اضافہ",
+      "نل اسپرم اور ایزو اسپرمیا میں مؤثر",
+      "نیکروسپرمیہ اور اولیگوسپرمیہ میں سپرم کا معیار بہتر",
+      "جسمانی اور جنسی کمزوری میں طاقت بحال",
     ],
-    dosage: "Two tablespoons daily after lunch, or as directed by your Hakeem.",
+    dosage: "روزانہ استعمال کیلئے بہترین، یا اپنے حکیم کی ہدایت کے مطابق۔",
     pairWith: ["khamira-gilo-himalayi", "majoon-e-shahi"],
   },
   {

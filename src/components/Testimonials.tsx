@@ -2,9 +2,9 @@
 import { useEffect, useRef, useState } from "react";
 import Stars from "./Stars";
 
-/* NOTE: reviews may only mention products from the real first-5 catalog
+/* NOTE: reviews may only mention products from the real catalog
    (Joint Sukoon Oil, Prozon Premium Prostate Support, Men's Vitality Support,
-   Donkey Oil & Golden Capsule, Pine Height) — no retired/dummy product names. */
+   Donkey Oil & Golden Capsule, Pine Height, Sperm Plus Tablets) — no retired/dummy product names. */
 const REVIEWS = [
   { name: "Ayesha K., Lahore", text: "Joint Sukoon Oil ki quality bilkul purane dawakhanay jaisi hai. Packaging bhi neat thi aur delivery sirf do din mein pohanch gayi. Bohat shukriya!", rating: 5 },
   { name: "Muhammad Iqbal, Islamabad", text: "Walid sahab ke liye majoon mangwaya tha. Unhone bataya ke zaiqa aur asar dono purane zamane ki dawa jaise hain. InshaAllah dobara order karunga.", rating: 5 },

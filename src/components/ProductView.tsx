@@ -106,7 +106,7 @@ export default function ProductView({ slug }: { slug: string }) {
               <p className="mt-3 inline-block rounded-full bg-slate-100 px-3 py-1 text-sm font-bold text-slate-500">Out of stock — new batch coming soon</p>
             )}
 
-            <p className="mt-4 leading-7 text-slate-600">{p.short}</p>
+            <p dir="auto" className="mt-4 leading-7 text-slate-600">{p.short}</p>
             {p.urdu && <p dir="rtl" lang="ur" className="mt-2 text-lg font-semibold text-brand-700">{p.urdu}</p>}
 
             {p.inStock && (
@@ -131,19 +131,25 @@ export default function ProductView({ slug }: { slug: string }) {
         <div className="mt-12 grid gap-10 lg:grid-cols-2">
           <div>
             <h2 className="font-display text-2xl font-bold text-slate-900">Description</h2>
-            {p.description.map((d, i) => <p key={i} className="mt-3 leading-7 text-slate-600">{d}</p>)}
+            {p.description.map((d, i) =>
+              d.startsWith("## ") ? (
+                <h3 key={i} dir="auto" className="mt-5 font-display text-lg font-bold text-slate-900">{d.slice(3)}</h3>
+              ) : (
+                <p key={i} dir="auto" className="mt-3 leading-7 text-slate-600">{d}</p>
+              )
+            )}
           </div>
           <div>
             <h2 className="font-display text-2xl font-bold text-slate-900">Benefits & Dosage</h2>
             <ul className="mt-3 space-y-2">
               {p.benefits.map((b, i) => (
-                <li key={i} className="flex items-start gap-2.5 text-slate-600">
+                <li key={i} dir="auto" className="flex items-start gap-2.5 text-slate-600">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="mt-1 shrink-0 text-brand-600"><path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" /></svg>
                   {b}
                 </li>
               ))}
             </ul>
-            <p className="mt-4 rounded-xl bg-brand-50 p-4 text-sm leading-6 text-brand-900"><b>Dosage:</b> {p.dosage}</p>
+            <p dir="auto" className="mt-4 rounded-xl bg-brand-50 p-4 text-sm leading-6 text-brand-900"><b>Dosage:</b> {p.dosage}</p>
           </div>
         </div>
       </div>
