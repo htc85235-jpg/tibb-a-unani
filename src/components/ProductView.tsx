@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { bySlug, prevNext, related, alsoBought } from "@/lib/products";
+import { bySlug, prevNext, alsoBought, products } from "@/lib/products";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Price from "@/components/Price";
 import Stars from "@/components/Stars";
@@ -61,7 +61,7 @@ export default function ProductView({ slug }: { slug: string }) {
         <div className="mt-6 grid gap-10 lg:grid-cols-2">
           {/* gallery — sticky on desktop: the image stays pinned in the left column
               while the right column (info + description + benefits + policies)
-              scrolls, exactly like the reference store. Releases at "Pairs well with". */}
+              scrolls, exactly like the reference store. Releases at the other-products grid. */}
           <div className="flex gap-3 self-start lg:sticky lg:top-24">
             <div className="flex flex-col gap-3">
               <button aria-label="Zoom image" onClick={() => setZoom(true)} className="overflow-hidden rounded-lg border-2 border-brand-500">
@@ -147,7 +147,7 @@ export default function ProductView({ slug }: { slug: string }) {
 
             {/* Shipping and Returns + Return Policies — in Urdu, closed by default,
                 opened with the + icon; placed after the description part and above
-                the "Pairs well with" section, matching the reference store */}
+                the other-products grid, matching the reference store */}
             <div className="mt-10">
               <Accordion
                 items={[
@@ -160,12 +160,12 @@ export default function ProductView({ slug }: { slug: string }) {
         </div>
       </div>
 
-      {/* pairs well with */}
-      <section className="py-12" aria-label="Pairs well with">
+      {/* every other product — no heading, tight gap right after the policy
+          accordions; visitor sees the full catalog minus the product opened */}
+      <section className="pb-12 pt-2" aria-label="More products">
         <div className="container-x">
-          <h2 className="font-display text-2xl font-bold text-slate-900">Pairs well with</h2>
-          <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
-            {related(p).map((r) => <ProductCard key={r.slug} p={r} />)}
+          <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+            {products.filter((r) => r.slug !== p.slug).map((r) => <ProductCard key={r.slug} p={r} />)}
           </div>
         </div>
       </section>

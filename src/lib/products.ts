@@ -29,7 +29,7 @@ export type Product = {
   description: string[];
   benefits: string[];
   dosage: string;
-  pairWith: string[]; // slugs for "Pairs well with"
+  pairWith: string[]; // slugs for pairing recommendations (kept for data compat)
 };
 
 export const CATEGORIES = ["Majoon", "Khamira", "Sharbat", "Roghan", "Habbe", "Capsule"];
