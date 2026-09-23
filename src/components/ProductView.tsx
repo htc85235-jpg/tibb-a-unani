@@ -62,7 +62,7 @@ export default function ProductView({ slug }: { slug: string }) {
             mobile Chrome "Desktop site" mode (~980px viewport) also gets the 2-col layout */}
         <div className="mt-6 grid gap-10 min-[750px]:grid-cols-2">
           {/* gallery — sticky on desktop: the image stays pinned in the left column
-              while the right column (info + description + benefits + policies)
+              while the right column (info + description + policies)
               scrolls, exactly like the reference store. Releases at the other-products grid. */}
           <div data-testid="gallery-sticky" className="flex gap-3 self-start min-[750px]:sticky min-[750px]:top-24">
             <div className="flex flex-col gap-3">
@@ -133,19 +133,8 @@ export default function ProductView({ slug }: { slug: string }) {
               )}
             </div>
 
-            {/* benefits & dosage */}
-            <div className="mt-10">
-              <h2 className="font-display text-2xl font-bold text-slate-900">Benefits & Dosage</h2>
-              <ul className="mt-3 space-y-2">
-                {p.benefits.map((b, i) => (
-                  <li key={i} dir="auto" className="flex items-start gap-2.5 text-slate-600">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="mt-1 shrink-0 text-brand-600"><path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                    {b}
-                  </li>
-                ))}
-              </ul>
-              <p dir="auto" className="mt-4 rounded-xl bg-brand-50 p-4 text-sm leading-6 text-brand-900"><b>Dosage:</b> {p.dosage}</p>
-            </div>
+            {/* benefits & dosage live inside the Urdu description ("فوائد ایک نظر میں"),
+                like the reference store — no separate English section (client request) */}
 
             {/* Shipping and Returns + Return Policies — in Urdu, closed by default,
                 opened with the + icon; placed after the description part and above
