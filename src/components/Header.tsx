@@ -85,22 +85,27 @@ export default function Header() {
           </nav>
         </div>
 
-        {/* centre: logo only — perfectly centred on every viewport */}
+        {/* centre: wordmark + client emblem on its right — perfectly centred on every viewport */}
         <Link
           href="/"
           aria-label="Tibb-a-Unani — Herbal & Unani Remedies"
-          className="flex items-center justify-center leading-none"
+          className="flex items-center justify-center gap-2 leading-none sm:gap-3"
         >
           <img
             src="/images/logo-header.png"
             alt="Tibb-a-Unani — Herbal & Unani Remedies"
             className="h-7 w-auto sm:h-10 lg:h-12 xl:h-14"
           />
+          <img
+            src="/images/logo-emblem.png"
+            alt="Tibb-e-Unani brand emblem"
+            className="h-7 w-auto sm:h-10 lg:h-11 xl:h-14"
+          />
         </Link>
 
         {/* right: search pinned to the extreme right on every viewport */}
         <div className="flex items-center justify-end">
-          <div ref={box} className="relative hidden w-52 md:block lg:w-60">
+          <div ref={box} className="relative hidden w-52 md:block lg:w-48 xl:w-60">
           <form onSubmit={submit}>
             <svg className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="2" /><path d="M20 20l-3.5-3.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
             <input
